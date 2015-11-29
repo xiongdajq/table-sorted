@@ -1,7 +1,7 @@
 var ascending_or_descending = [];
 var ti_tmp = -1, hj_tmp = -1;
 
-window.onload=function() {
+function doIt() {
 	$("table").each(function (i) {
 		$("table").eq(i).find("tbody tr:odd").css("background-color", "#DDDDDD");
 		$("table").eq(i).find("tbody tr:even").css("background-color", "#FFFFFF");
@@ -53,9 +53,10 @@ function descending(ti, hj, trs) {
 	trs.sort(function(a, b) {
 		return $(b).find("td").eq(hj).text().localeCompare($(a).find("td").eq(hj).text());
 	});
-}
-
+} 
 function remove_class(ti) {
 	$("table").eq(ti).find("th").removeClass("change_background_image_as");
 	$("table").eq(ti).find("th").removeClass("change_background_image_des");
 }
+
+doIt();
